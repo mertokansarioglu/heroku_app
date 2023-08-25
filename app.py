@@ -33,9 +33,9 @@ def get_hours():
 		x2 = float(request.form['facebook'])
 		x2 = float(request.form['newspaper'])
 
-		your_marks = model.predict([[x1,x2,x3]])
+		sales = model.predict([[x1,x2,x3]])
 		
-	return render_template("home.html", marks = your_marks[0][0])
+	return render_template("home.html", marks = sales[0])
 
 
 
