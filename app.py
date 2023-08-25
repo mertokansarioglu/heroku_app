@@ -35,7 +35,7 @@ def get_hours():
 
 		sales = model.predict([[x1,x2,x3]])
 		
-	return render_template("home.html", marks = sales[0])
+	return render_template("home.html", result = sales[0])
 
 
 
