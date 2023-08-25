@@ -29,10 +29,11 @@ model = joblib.load("model.pkl")
 @app.route("/submit", methods = ['GET', 'POST'])
 def get_hours():
 	if request.method == 'POST':
-		x1 = float(request.form['number 1'])
-		x2 = float(request.form['number 2'])
+		x1 = float(request.form['youtube'])
+		x2 = float(request.form['facebook'])
+		x2 = float(request.form['newspaper'])
 
-		your_marks = model.predict([[x1,x2]])
+		your_marks = model.predict([[x1,x2,x3]])
 		
 	return render_template("home.html", marks = your_marks[0][0])
 
